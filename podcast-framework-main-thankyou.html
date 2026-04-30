@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--
+  THANK YOU PAGE — SOURCE: podcast-framework-main.html (Main Long-Form Sales Page)
+  Conversion source tag: ?src=main
+  Booking placeholder: Replace the .booking-block section with your Calendly or booking embed.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In! Here's Your Free Podcast Frameworks | Icons of Real Estate</title>
+<meta name="description" content="Your 5 Podcast Frameworks are on their way. Check your inbox — and if you want a hand picking the right one to start with, book a free strategy call.">
+<style>
+  :root {
+    --orange: #F57C20;
+    --orange-light: #FFF3E8;
+    --orange-border: #F5D0A9;
+    --dark: #1A1A2E;
+    --gray-900: #212121;
+    --gray-700: #555;
+    --gray-500: #888;
+    --gray-300: #CCC;
+    --gray-200: #E5E5E5;
+    --gray-100: #F5F5F5;
+    --white: #FFFFFF;
+    --green: #16A34A;
+    --green-light: #F0FDF4;
+    --green-border: #BBF7D0;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray-100); color: var(--gray-900); }
+
+  /* TOPBAR */
+  .topbar { background: var(--dark); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar-logo { color: var(--white); font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+  .topbar-logo .mic { color: var(--orange); font-size: 20px; }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--white); box-shadow: 0 0 60px rgba(0,0,0,0.08); }
+
+  /* HERO */
+  .hero { padding: 72px 60px 60px; background: linear-gradient(180deg, var(--dark) 0%, #0f0f1e 100%); text-align: center; color: var(--white); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(245,124,32,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: var(--white); font-size: 13px; font-weight: 700; padding: 8px 20px; border-radius: 24px; margin-bottom: 28px; letter-spacing: 0.5px; }
+  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.2; max-width: 640px; margin: 0 auto 20px; position: relative; }
+  .hero h1 span { color: var(--orange); }
+  .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 520px; margin: 0 auto 40px; }
+  .hero-steps { display: flex; justify-content: center; gap: 0; max-width: 600px; margin: 0 auto; }
+  .step { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; padding: 0 12px; position: relative; }
+  .step:not(:last-child)::after { content: ''; position: absolute; top: 22px; right: -2px; width: 50%; height: 2px; background: rgba(255,255,255,0.15); }
+  .step-num { width: 44px; height: 44px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; color: var(--white); z-index: 1; }
+  .step-label { font-size: 13px; color: rgba(255,255,255,0.55); text-align: center; line-height: 1.4; }
+
+  /* INBOX REMINDER */
+  .inbox-block { padding: 48px 60px; background: var(--green-light); border-bottom: 1px solid var(--green-border); text-align: center; }
+  .inbox-icon { font-size: 52px; margin-bottom: 16px; }
+  .inbox-block h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; color: var(--gray-900); }
+  .inbox-block p { font-size: 16px; color: var(--gray-700); line-height: 1.65; max-width: 520px; margin: 0 auto; }
+  .inbox-tip { display: inline-block; margin-top: 20px; background: var(--white); border: 1px solid var(--green-border); border-radius: var(--radius-sm); padding: 12px 24px; font-size: 14px; color: var(--gray-700); }
+  .inbox-tip strong { color: var(--gray-900); }
+
+  /* WHAT TO DO NEXT */
+  .next-steps { padding: 56px 60px; border-bottom: 1px solid var(--gray-200); }
+  .next-steps h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+  .next-steps .intro { font-size: 16px; color: var(--gray-700); line-height: 1.6; margin-bottom: 36px; max-width: 600px; }
+  .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .step-card { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; }
+  .step-card .step-icon { font-size: 28px; margin-bottom: 12px; }
+  .step-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--gray-900); }
+  .step-card p { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+  .step-card.highlight { background: var(--orange-light); border-color: var(--orange-border); }
+
+  /* FRAMEWORKS QUICK REF */
+  .quick-ref { padding: 56px 60px; background: var(--gray-100); border-bottom: 1px solid var(--gray-200); }
+  .quick-ref h2 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+  .quick-ref .sub { font-size: 15px; color: var(--gray-500); margin-bottom: 28px; }
+  .fw-list { display: flex; flex-direction: column; gap: 12px; }
+  .fw-row { display: flex; align-items: center; gap: 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-sm); padding: 16px 20px; }
+  .fw-row .num { width: 36px; height: 36px; min-width: 36px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 15px; font-weight: 800; }
+  .fw-row .name { font-size: 15px; font-weight: 700; color: var(--gray-900); }
+  .fw-row .desc { font-size: 13px; color: var(--gray-500); margin-top: 2px; }
+
+  /* BOOKING BLOCK */
+  .booking-block { padding: 56px 60px; border-bottom: 1px solid var(--gray-200); text-align: center; }
+  .booking-block .eyebrow { font-size: 12px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .booking-block h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+  .booking-block .desc { font-size: 16px; color: var(--gray-700); line-height: 1.65; max-width: 520px; margin: 0 auto 32px; }
+  /* ── BOOKING WIDGET PLACEHOLDER ──────────────────────────────────────────────
+     Replace the .booking-placeholder div below with your Calendly embed or
+     other booking widget. Example:
+       <div class="calendly-inline-widget"
+            data-url="https://calendly.com/YOUR_LINK"
+            style="min-width:320px;height:630px;"></div>
+       <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+  ──────────────────────────────────────────────────────────────────────────── -->
+  .booking-placeholder { max-width: 520px; margin: 0 auto; border: 2px dashed var(--orange-border); border-radius: var(--radius); padding: 48px 32px; background: var(--orange-light); }
+  .booking-placeholder .ph-icon { font-size: 40px; margin-bottom: 16px; }
+  .booking-placeholder h3 { font-size: 19px; font-weight: 800; margin-bottom: 8px; color: var(--gray-900); }
+  .booking-placeholder p { font-size: 14px; color: var(--gray-700); margin-bottom: 24px; line-height: 1.6; }
+  .booking-placeholder .book-btn { display: inline-block; background: var(--orange); color: var(--white); border: none; padding: 16px 40px; font-size: 16px; font-weight: 700; border-radius: var(--radius-sm); cursor: pointer; text-decoration: none; box-shadow: 0 4px 20px rgba(245,124,32,0.3); }
+  .booking-placeholder .book-btn:hover { background: #E06A10; }
+  .booking-placeholder .micro { font-size: 13px; color: var(--gray-500); margin-top: 12px; }
+
+  /* FOOTER */
+  .footer { padding: 28px 60px; background: var(--gray-900); color: rgba(255,255,255,0.35); display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { padding: 48px 28px 40px; }
+    .hero h1 { font-size: 28px; }
+    .hero-steps { gap: 0; }
+    .inbox-block, .next-steps, .quick-ref, .booking-block { padding: 44px 28px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .footer { padding: 20px 28px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    <span class="mic">&#127908;</span> ICONS OF REAL ESTATE
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">&#10003; &nbsp;You're all set!</div>
+    <h1>Your Podcast Frameworks Are <span>On Their Way</span></h1>
+    <div class="hero-sub">Check your inbox — the PDF is heading to you right now. In the meantime, here's exactly what to do next.</div>
+
+    <div class="hero-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-label">Check your inbox</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-label">Pick your framework</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-label">Book your first guest</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INBOX REMINDER -->
+  <div class="inbox-block">
+    <div class="inbox-icon">&#128235;</div>
+    <h2>Check your email</h2>
+    <p>The 5 Podcast Frameworks PDF is on its way. If it doesn't land in the next couple of minutes, check your spam or promotions tab — it happens sometimes.</p>
+    <div class="inbox-tip"><strong>Tip:</strong> Add <strong>hello@iconsofrealestate.com</strong> to your contacts so you never miss a thing.</div>
+  </div>
+
+  <!-- WHAT TO DO NEXT -->
+  <div class="next-steps">
+    <h2>While you wait — here's your game plan</h2>
+    <div class="intro">You've got the frameworks. Here's how to make them actually work for you in the next 7 days.</div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon">&#128196;</div>
+        <h3>Read Framework #1 first</h3>
+        <p>If you're brand new to podcasting, start with the Authority Builder. It's the fastest path from zero to your first episode with a real guest.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">&#128222;</div>
+        <h3>Pick one person to reach out to</h3>
+        <p>You don't need a list of 100. Use the Guest Magnet framework and think of one person in your market you've been meaning to connect with.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">&#127908;</div>
+        <h3>Schedule your recording day</h3>
+        <p>Block time in your calendar this week to record. Even 90 minutes is enough for your first episode with a guest. Put it on the calendar before you close this tab.</p>
+      </div>
+      <div class="step-card highlight">
+        <div class="step-icon">&#128200;</div>
+        <h3>Want a personalized plan?</h3>
+        <p>If you'd like help figuring out which framework fits your market and goals best, you can book a free strategy call with the Icons team below.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAMEWORKS QUICK REFERENCE -->
+  <div class="quick-ref">
+    <h2>Your 5 Frameworks at a Glance</h2>
+    <div class="sub">A reminder of what's inside your download — bookmark this page.</div>
+    <div class="fw-list">
+      <div class="fw-row">
+        <div class="num">1</div>
+        <div>
+          <div class="name">Become a Local Authority</div>
+          <div class="desc">Position yourself as the go-to expert in your market using your podcast.</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="num">2</div>
+        <div>
+          <div class="name">Build Trust &amp; Relationships</div>
+          <div class="desc">Develop meaningful relationships with clients and industry pros through authentic conversation.</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="num">3</div>
+        <div>
+          <div class="name">The ICONS Proven Framework</div>
+          <div class="desc">Step-by-step process that takes the guesswork out of creating and publishing episodes.</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="num">4</div>
+        <div>
+          <div class="name">Maximize Lead Generation</div>
+          <div class="desc">Turn consistent episodes into a referral and lead pipeline for your business.</div>
+        </div>
+      </div>
+      <div class="fw-row">
+        <div class="num">5</div>
+        <div>
+          <div class="name">Achieve Long-Term Growth</div>
+          <div class="desc">Build a podcast schedule that compounds over time and keeps you top-of-mind.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING SECTION -->
+  <div class="booking-block">
+    <div class="eyebrow">Optional Next Step</div>
+    <h2>Want to talk through your podcast plan?</h2>
+    <div class="desc">If you'd like a hand figuring out which framework fits your situation — your market, your goals, your schedule — the Icons team is happy to jump on a quick call. No pitch, just a conversation.</div>
+
+    <!-- ── BOOKING WIDGET PLACEHOLDER ──────────────────────────────────────
+         Replace the .booking-placeholder div below with your actual booking
+         embed (e.g. Calendly, Acuity, TidyCal, etc.)
+    ─────────────────────────────────────────────────────────────────────── -->
+    <div class="booking-placeholder">
+      <div class="ph-icon">&#128197;</div>
+      <h3>Book a Free 15-Minute Strategy Call</h3>
+      <p>Replace this block with your Calendly or booking widget. This placeholder is here so you can drop in the embed code when you're ready.</p>
+      <a href="#" class="book-btn">Schedule a Time &rarr;</a>
+      <div class="micro">Free &mdash; no obligation &mdash; 15 minutes</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>&copy; 2026 Icons of Real Estate. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
