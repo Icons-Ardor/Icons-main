@@ -1,0 +1,245 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Watched. You Opted In. Now Let's Make It Real. | Icons of Real Estate</title>
+<meta name="description" content="Your 5 Podcast Frameworks are heading to your inbox. You've seen what's possible — here's the next step to make it happen for you.">
+<style>
+  :root {
+    --orange: #F57C20;
+    --orange-light: #FFF3E8;
+    --orange-border: #F5D0A9;
+    --dark: #1A1A2E;
+    --gray-900: #212121;
+    --gray-700: #555;
+    --gray-500: #888;
+    --gray-300: #CCC;
+    --gray-200: #E5E5E5;
+    --gray-100: #F5F5F5;
+    --white: #FFFFFF;
+    --green: #16A34A;
+    --green-light: #F0FDF4;
+    --green-border: #BBF7D0;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --red: #DC2626;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+    background: var(--gray-100); 
+    color: var(--gray-900); 
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* FULL WIDTH LAYOUT ENGINE */
+  section {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+
+  /* TOPBAR */
+  .topbar { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 12px 0; width: 100%; }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; }
+  .topbar-logo { color: var(--white); font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+  .topbar-logo .mic { color: var(--orange); font-size: 20px; }
+
+  /* HERO - FORCED WHITE TEXT */
+  .hero { 
+    padding: 80px 0 64px; 
+    background: linear-gradient(180deg, var(--dark) 0%, #0f0f1e 100%); 
+    position: relative; 
+    overflow: hidden; 
+  }
+  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(245,124,32,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { font-size: 13px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-align: center; }
+  
+  .hero h1 { 
+    font-size: 38px; font-weight: 800; line-height: 1.2; max-width: 720px; margin: 0 auto 20px; position: relative; text-align: center; 
+    color: #FFFFFF !important; /* Force white font color */
+  }
+  .hero h1 span { color: var(--orange) !important; }
+  
+  .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 560px; margin: 0 auto 48px; text-align: center; }
+
+  /* HERO TWO-COLUMN */
+  .hero-columns { display: flex; gap: 36px; align-items: flex-start; position: relative; }
+  .hero-video-col { flex: 1; min-width: 0; }
+  .hero-confirm-col { width: 300px; flex-shrink: 0; }
+
+  /* CONFIRMATION SIDE BOX */
+  .confirm-box { background: rgba(22, 163, 74, 0.12); border: 1px solid rgba(22, 163, 74, 0.3); border-radius: var(--radius); padding: 28px; }
+  .confirm-box .check-circle { width: 56px; height: 56px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; color: var(--white); margin: 0 auto 16px; box-shadow: 0 0 0 8px rgba(22,163,74,0.12); }
+  .confirm-box h3 { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 6px; text-align: center; }
+  .confirm-box .form-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 20px; line-height: 1.5; text-align: center; }
+  .confirm-box .confirm-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .confirm-box .confirm-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); }
+  .confirm-box .confirm-item .check { color: var(--green); font-weight: 700; font-size: 16px; }
+  .confirm-box .inbox-note { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; line-height: 1.5; }
+
+  /* REPLAY PLACEHOLDER */
+  .replay-box { aspect-ratio: 9 / 16; width: 100%; max-height: 480px; background: rgba(255,255,255,0.04); border: 2px dashed rgba(255,255,255,0.12); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; overflow: hidden; cursor: pointer; }
+  .replay-box .play-circle { width: 64px; height: 64px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(245,124,32,0.4); }
+  .replay-box .play-circle span { font-size: 24px; color: var(--white); margin-left: 3px; }
+  .replay-box .video-label { font-size: 12px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+  .replay-box .video-duration { font-size: 11px; color: rgba(255,255,255,0.2); }
+
+  /* INBOX SECTION */
+  .inbox-section { padding: 56px 0; background: var(--green-light); border-bottom: 1px solid var(--green-border); text-align: center; }
+  .inbox-icon { font-size: 48px; margin-bottom: 16px; }
+  .inbox-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+  .inbox-section p { font-size: 16px; color: var(--gray-700); line-height: 1.65; max-width: 520px; margin: 0 auto; }
+  .inbox-tip { display: inline-block; margin-top: 20px; background: var(--white); border: 1px solid var(--green-border); border-radius: var(--radius-sm); padding: 12px 24px; font-size: 14px; color: var(--gray-700); }
+
+  /* NEXT STEPS */
+  .next-steps { padding: 64px 0; border-bottom: 1px solid var(--gray-200); background: var(--white); }
+  .next-steps h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+  .next-steps .intro { font-size: 16px; color: var(--gray-700); margin-bottom: 36px; line-height: 1.6; max-width: 600px; }
+  .steps-list { display: flex; flex-direction: column; gap: 16px; }
+  .step-item { display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: var(--gray-100); border-radius: var(--radius); border-left: 5px solid var(--orange); }
+  .step-num { width: 44px; height: 44px; min-width: 44px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 800; font-size: 18px; }
+  .step-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; color: var(--gray-900); }
+  .step-item p { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+
+  /* BOOKING SECTION */
+  .booking-section { padding: 64px 0; background: var(--orange-light); border-bottom: 1px solid var(--orange-border); }
+  .booking-section .eyebrow { font-size: 12px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; text-align: center; }
+  .booking-section h2 { font-size: 30px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; text-align: center; }
+  .booking-section .desc { font-size: 16px; color: var(--gray-700); line-height: 1.65; max-width: 540px; margin: 0 auto 36px; text-align: center; }
+
+  /* FIX: Centered booking container with min-height to prevent cutoff */
+  .booking-container { 
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto; 
+    min-height: 1100px; 
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 20px 60px;
+  }
+
+  /* FOOTER */
+  .footer { padding: 28px 0; background: var(--gray-900); color: rgba(255,255,255,0.35); width: 100%; }
+  .footer .container { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { padding: 64px 0 48px; }
+    .hero h1 { font-size: 27px; }
+    .hero-columns { flex-direction: column; gap: 28px; }
+    .hero-confirm-col { width: 100%; }
+    .replay-box { max-height: 380px; }
+    .inbox-section, .next-steps, .booking-section { padding: 48px 0; }
+    .booking-container { min-height: 1300px; padding: 0 10px 40px; }
+    .footer .container { flex-direction: column; gap: 12px; text-align: center; }
+    .container { padding: 0 28px; }
+  }
+</style>
+
+<nav class="topbar">
+  <div class="container">
+    <div class="topbar-logo">
+      <span class="mic">🎤</span> ICONS OF REAL ESTATE
+    </div>
+  </div>
+</nav>
+
+<main class="page-wrapper">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">You're In — Now Let's Make It Real</div>
+      <h1>You Watched. You Opted In.<br><span>Time to Record Your First Episode.</span></h1>
+      <div class="hero-sub">Your frameworks are in your inbox. Here's what to do in the next 7 days to go from download to your first guest booked.</div>
+
+      <div class="hero-columns">
+        <div class="hero-video-col">
+          <div class="replay-box">
+            <div class="play-circle"><span>▶</span></div>
+            <div class="video-label">Watch Again</div>
+            <div class="video-duration">Replay — &lt; 60 seconds</div>
+          </div>
+        </div>
+
+        <div class="hero-confirm-col">
+          <div class="confirm-box">
+            <div class="check-circle">✓</div>
+            <h3>You're confirmed!</h3>
+            <div class="form-sub">Your PDF is on its way to your inbox right now.</div>
+            <div class="confirm-items">
+              <div class="confirm-item"><span class="check">✓</span> 5 Podcast Frameworks PDF</div>
+              <div class="confirm-item"><span class="check">✓</span> Guest Booking Scripts</div>
+              <div class="confirm-item"><span class="check">✓</span> Launch Checklist</div>
+              <div class="confirm-item"><span class="check">✓</span> Syndication Framework</div>
+            </div>
+            <div class="inbox-note">Check your inbox or spam folder if it doesn't arrive in 2 minutes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inbox-section">
+    <div class="container">
+      <div class="inbox-icon">📫</div>
+      <h2>Check your inbox</h2>
+      <p>Your 5 Podcast Frameworks PDF is on its way. Subject line: <strong>"Your 5 Podcast Frameworks — Icons of Real Estate."</strong> Not there yet? Check promotions or spam.</p>
+      <div class="inbox-tip">💡 Add <strong>hello@iconsofrealestate.com</strong> to your contacts to make sure our emails always land.</div>
+    </div>
+  </section>
+
+  <section class="next-steps">
+    <div class="container">
+      <h2>Your 7-day action plan</h2>
+      <div class="intro">You don't need months to get started. Here's how to go from download to your first recording this week.</div>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Today: Open your PDF &amp; pick a framework</h3>
+            <p>Read the intro section and pick one of the five frameworks based on your goal. If you're not sure, start with Framework #3 — The ICONS Proven Framework. It's the most universal starting point.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Day 2–3: Pick your first guest</h3>
+            <p>Use the Guest Booking Framework to identify one person in your market — a lender, top agent, business owner, or investor — and send the invite. The script is in the PDF. Most people say yes within a few days.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Day 4–7: Book and record your first episode</h3>
+            <p>Set up a free recording session (Zoom works fine), run a 30-minute conversation using the Hosting Framework, and you've got your first episode. That's the whole thing. No studio needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-section">
+    <div class="container">
+      <div class="eyebrow">Ready to Move Faster?</div>
+      <h2>Book a free strategy call with the Icons team</h2>
+      <div class="desc">Want someone to walk you through exactly which framework fits your market and help you set a launch date? Our team offers free 15-minute calls for agents who want a running start. No pitch — just a plan.</div>
+
+      <div class="booking-container">
+        <iframe src="https://link.iconsofrealestate.com/widget/booking/KTKQcqekwR9uBvfE3WFw" style="width: 100%; height: 1100px; border:none; overflow: hidden;" scrolling="no" id="aE3FiXPx9sPY8KgIbgek_1778147390657">
+        </iframe>
+        <script src="https://link.iconsofrealestate.com/js/form_embed.js" type="text/javascript"></script>
+      </div>
+    </div>
+  </section>
+
+</main>
+<div class="tve_iframe_cover"></div>
